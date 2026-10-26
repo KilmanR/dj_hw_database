@@ -15,8 +15,7 @@ def books_by_date_view(request, pub_date):
     template = "books/books_list.html"
     pub_date_obj = datetime.strptime(pub_date, "%Y-%m-%d").date()
     books = Book.objects.filter(pub_date=pub_date_obj).order_by("pub_date")
-
-    # ИСПРАВЛЕНО: добавлен блок вычисления next_date, который был пропущен
+    
     previous_date = (
         Book.objects.filter(pub_date__lt=pub_date_obj)
         .order_by("-pub_date")
