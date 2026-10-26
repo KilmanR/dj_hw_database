@@ -9,3 +9,5 @@ build/
 .vscode/
 db.sqlite3
 git_python_cheatsheet.md
+.flake8
+
